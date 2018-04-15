@@ -5,16 +5,11 @@
       "loopback/server/models",
       "../common/models",
       "./models"
-    ],
-    "mixins": [
-      "loopback/common/mixins",
-      "loopback/server/mixins",
-      "../common/mixins",
-      "./mixins"
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "db",
+    "public": false
   },
   "AccessToken": {
     "dataSource": "db",
@@ -28,11 +23,23 @@
     "dataSource": "db",
     "public": false,
     "options": {
-      "strictObjectIDCoercion": true
+      "strictObjectIDCoercion" : true
     }
   },
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "project": {
+    "dataSource": "db",
+    "public": true
+  },
+  "customer": {
+    "dataSource": "db",
+    "public": true
+  },
+  "team": {
+    "dataSource": "db",
+    "public": true
   }
 }

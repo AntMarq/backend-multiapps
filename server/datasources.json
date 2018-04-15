@@ -4,5 +4,24 @@
   "port": 27017,
   "name": "db",
   "connector": "mongodb"  
+  },
+  "emailDs": {
+    "name": "emailDs",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "smtp",
+        "host": "smtp.gmail.com",
+        "secure": true,
+        "port": 465,
+        "tls": {
+          "rejectUnauthorized": false
+        },
+        "auth": {
+          "user": "applications.manager.ci@gmail.com",
+          "pass": "=qnqyKJ3NxnM5Jp"
+        }
+      }
+    ]
   }
 }

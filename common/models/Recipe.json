@@ -1,0 +1,41 @@
+{
+    "name": "Recipe",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "properties": {
+        "name":"string"
+    },
+    "validations": [],
+    "relations": {
+        "customers": {
+            "type": "referencesMany",
+            "model": "Customer",
+            "foreignKey": "customerIds",
+            "options": {
+              "validate": true,
+              "forceId": false
+            }
+          }
+    },
+    "acls": [
+        {
+            "principalType": "ROLE",
+            "principalId": "$authenticated",
+            "accessType": "READ",
+            "permission": "ALLOW"
+        },
+        {
+            "accessType": "EXECUTE",
+            "principalType": "ROLE",
+            "principalId": "admin",
+            "permission": "ALLOW"
+        },
+        {
+            "accessType": "*",
+            "principalType": "ROLE",
+            "principalId": "$everyone",
+            "permission": "DENY"
+        }
+    ],
+    "methods": []
+  }
